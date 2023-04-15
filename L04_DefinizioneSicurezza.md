@@ -114,6 +114,13 @@ Si può così osservare quali servizi sono attivi (**comprensione del target**) 
 
 Un intrusion detection system verifica le intrusioni, è spesso configurabile. Se la configurazione è troppo aggressiva si hanno molti falsi positivi, se invece risulta essere troppo morbida potrebbe non rilevare le intrusioni. Quello della "giusta configurazione" è un problema aperto quindi e spesso bisogna trovare delle euristiche e affidarsi alla statistica.
 
+```bash
+# bin/bash!
+# Esempio di uno script di intrusion detection
+# Trova i file con il bit SUID impostato
+cd // && find / -type f -perm -u=s -iname ".*" 2>/dev/null
+```
+
 ------
 
 **Elenco di lettura**
