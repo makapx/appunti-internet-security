@@ -12,6 +12,8 @@ Table of content
 5. [Attacchi, esempi e catalogazione. Proprietà di sicurezza](./L05_Attacchi_ProprietaSicurezza.md)
 6. [Analisi delle proprietà di sicurezza pt.1: autenticazione, integrità e privatezza](./L06_Segretezza_Autenticazione_Integrita_Privatezza.md)
 7. [Analisi delle proprietà di sicurezza pt.2: anonimato e non ripudio. VPN overview.](./L07_Anonimato_NonRipudio.md)
+8. [Analisi del protocollo WATA e WATA v2](./L08_WATA.md)
+9. [Disponibilità, controllo di accesso, policy. Analisi di una policy.](./L09_Disponibilita_Accesso_Policy.md)
 
 ## Note per l'utilizzo
 
