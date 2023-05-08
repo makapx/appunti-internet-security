@@ -147,9 +147,9 @@ Alcune assunzioni fondamentali:
 
 | Ciò che è pubblico |  Ciò che è privato   |
 | :----------------: | :------------------: |
-|  Il crittosistema  | Le chiavi utilizzati |
+|  Il crittosistema  | Le chiavi utilizzate |
 
-La cifratura può essere una misura di sicurezza nel momento in cui, intercettato un messaggio in maniera indebita, questo non è "traducibile"-
+La cifratura può essere una misura di sicurezza nel momento in cui, intercettato un messaggio in maniera indebita, questo non è "traducibile"
 
 ![crittografia](./images/crittografia.png)
 
