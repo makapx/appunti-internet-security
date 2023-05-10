@@ -17,6 +17,7 @@ Table of content
 10. [Access Control Matrix. Modelli di attaccante: Dolev-Yao e General Attacker. Catalogazione di WATA in base ai modelli di attaccante. Ulteriori approfondimenti sull'autenticazione](./L10_ModelliAttaccante_Autenticazione.md)
 11. [Autenticazione basa su possesso: smart token. Autenticazione biometrica. Cenni di crittogragia](./L11_SmartToken_Biometria_Crittografia.md)
 12. [Crittografia](./L12_Crittografia.md)
+13. [Salting di password. Freshness. Nonce](./L13_Salting_Freshness_Nonce.md)
 
 ## Note per l'utilizzo
 
