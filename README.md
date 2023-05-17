@@ -18,6 +18,7 @@ Table of content
 11. [Autenticazione basa su possesso: smart token. Autenticazione biometrica. Cenni di crittogragia](./L11_SmartToken_Biometria_Crittografia.md)
 12. [Crittografia](./L12_Crittografia.md)
 13. [Salting di password. Freshness. Nonce](./L13_Salting_Freshness_Nonce.md)
+14. [Cifratura come misura per sicurezza, autenticazione ed integrità. Certificati. Firma Digitale. Diffie-Hellman](./L14_FirmaDigitale_DiffieHellman.md)
 
 ## Note per l'utilizzo
 
