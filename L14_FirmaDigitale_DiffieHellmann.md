@@ -188,14 +188,14 @@ Il certificato è **pubblico** ma non per questo non è robusto, infatti se la f
 Citiamo ora alcuni protocolli più evoluti.
 
 - Basati su crittografia simmetrica:
-  - **Diffie-Hellman (DH)**
+  - **Diffie-Hellmann (DH)**
   - **RSA Key Exchange**
 - Basati su crittografia asimmetrica:
   - **Public-Key Infrastructure (PKI)**
 
-# Protocollo Diffie-Hellman
+# Protocollo Diffie-Hellmann
 
-Indichiamo ora gli step del protocollo Diffie-Hellman per lo scambio di chiavi in un sistema crittografico che voglia essere simmetrico.
+Indichiamo ora gli step del protocollo Diffie-Hellmann per lo scambio di chiavi in un sistema crittografico che voglia essere simmetrico.
 
 - $A$ e $B$ concordano due parametri **pubblici** $\alpha$ e $\beta$ **coprimi tra loro**
 
