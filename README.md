@@ -20,6 +20,8 @@ Table of content
 13. [Salting di password. Freshness. Nonce](./L13_Salting_Freshness_Nonce.md)
 14. [Cifratura come misura per sicurezza, autenticazione ed integrità. Certificati. Firma Digitale. Diffie-Hellmann](./L14_FirmaDigitale_DiffieHellmann.md)
 15. [Robustezza del protocollo Diffie-Hellmann. Certificati. Chain of Trust](./L15_RobustezzaDiffieHellmann_Certificati.md)
+16. [PKI. Esempio di attacco allo store dei certificati. Certificati self-issued. CRL](L16_PKI_CertificatiSelfIssued_CRL.md)
+17. [Protocollo Needham-Schroeder. Attacco di Lowe a Needham-Schroeder e scenario di attacco General Attacker in Needham-Schroeder](L17_Needham_Schroeder.md)
 
 ## Note per l'utilizzo
 
