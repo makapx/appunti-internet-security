@@ -73,7 +73,7 @@ La variante di questo protocollo che non cifra l'ultima nonce, è detta Helsinki
 
 ### Attacco di Lowe al protocollo Needham-Schroeder
 
-**Gavin Lowe** nel **1995** dimostra come il protocollo  **Needham-Schroeder** sia attaccabile dal seguente scenario, senza toccare le assunzioni crittografiche. Questo porterà poi all'utilizzo di metodi formali per la dimostrazione della correttezza dei procolli.
+**Gavin Lowe** nel **1995** dimostra come il protocollo **Needham-Schroeder** sia attaccabile dal seguente scenario, senza toccare le assunzioni crittografiche. Questo porterà poi all'utilizzo di metodi formali per la dimostrazione della correttezza dei procolli.
 
 Supponiamo di avere tre agenti, $A, B, C$, dove $C$ è l'utente malevolo.
 
@@ -90,8 +90,8 @@ La ricezione del messaggio al passaggio 3 però agli occhi di $A$ non mostra alc
 
 Effettuati i 4 punti di autenticazione, $A$ estrae la nonce / chiave di sessione e comunica con $C$.
 $$
-5. A \rightarrow C:  \{ N_b \}_{k_c} \\
-6. C \rightarrow B: \{ N_a \}_{k_b}
+5. \ A \rightarrow C:  \{ N_b \}_{k_c} \\
+6. \ C \rightarrow B: \{ N_a \}_{k_b}
 $$
 $B$ crede quindi che il suo interlocutore sia $A$. Ritiene di aver autenticato $A$ ma il suo interlocutore è $C$. Questo è un man-in-the-middle al protocollo di Needham-Schroeder.
 L'apprendimento della nonce $N_b$ permette all'attaccante di sovvertire la proprietà l'autenticazione, rendendo il protocollo insicuro.
@@ -105,7 +105,7 @@ Supponiamo quindi l'esistenza di una doppia attività offensiva, sia da $C$ che 
 
 $B$ può exploitare la vulnerabilità trovata da Lowe fingendosi $C$ con $A$, visto che anche $B$ conosce le nonce (attacco di retalietion, vendetta).
 
-### Fix al protocollo Needham-Schroeder per evitare l'attacco
+### Fix al protocollo Needham-Schroeder per evitare l'attacco di Lowe
 
 Sono di seguito proposte più modifiche.
 $$
@@ -130,10 +130,13 @@ La seconda proprosta è un fix invece. $A$ per estrarre $N_b$ dovrebbe usare la 
 Anche la terza proposta è un fix anzi, è proprio questa a rendere la soluzione precedente un fix (di fatto il punto 1 della seconda soluzione è irrilevante).
 
 La quarta soluzione è un fix perchè $C$ non può decifrare né alterare il contenuto del messaggio. Non conoscerà $N_b$ e non può spacciarsi per $B$. Questo è un fix a livello "informativo". Viene **esplicitato** il destinatario $B$ che sta rispondendo.
+Se l'attaccante facesse forgering di questo messaggio $A$ lo capirebbe, facendo abort della comunicazione.
 
 L'ultima soluzione non è un fix. Per quanto non sia modificabile, è ricreabile dall'attaccante e inoltrabile al destinatario.
 
 Notiamo come il positioning del messaggio sia importante, è difficile realizzare un fix al primo messaggio.
+
+:pencil: **Domanda d'esame**: perchè la quarta proposto è una solusione?
 
 ------
 
