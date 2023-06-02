@@ -22,6 +22,7 @@ Table of content
 15. [Robustezza del protocollo Diffie-Hellmann. Certificati. Chain of Trust](./L15_RobustezzaDiffieHellmann_Certificati.md)
 16. [PKI. Esempio di attacco allo store dei certificati. Certificati self-issued. CRL](L16_PKI_CertificatiSelfIssued_CRL.md)
 17. [Protocollo Needham-Schroeder. Attacco di Lowe a Needham-Schroeder e scenario di attacco General Attacker in Needham-Schroeder. Possibili soluzioni per l'attacco di Lowe](L17_Needham_Schroeder.md)
+18. [Protocollo Woo-Lam ed attacco parallel session](L18_Woo_Lam.md)
 
 ## Note per l'utilizzo
 
