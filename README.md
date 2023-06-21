@@ -24,6 +24,7 @@ Table of content
 17. [Protocollo Needham-Schroeder. Attacco di Lowe a Needham-Schroeder e scenario di attacco General Attacker in Needham-Schroeder. Possibili soluzioni per l'attacco di Lowe](L17_Needham_Schroeder.md)
 18. [Protocollo Woo-Lam ed attacco parallel session](L18_Woo_Lam.md)
 19. [IPSEC](./L19_IPSEC.md)
+20. [IDS e Malware](./L20_IDS_Malware.md)
 
 ## Note per l'utilizzo
 
