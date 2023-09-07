@@ -7,7 +7,7 @@
 
 Supponiamo che $A$ e $B$ debbano autenticarsi a vicenda.
 $$
-1. \ A \rightarrow B: { \{ N_a \} }_{k_B} \\
+1. \ A \rightarrow B: { \{ N_a \} }_{k_b} \\
 2. \  B \rightarrow A: N_a
 $$
 Questo protocollo basilare autentica $A$ con $B$ e viceversa, con freshness.
@@ -19,13 +19,13 @@ Siccome il protocollo basilare prevedeva che $B$ mandasse un messaggio ad $A$ co
 Equivalentemente per autenticare $B$ con $A$ possiamo fare:
 $$
 1. \  A \rightarrow B : N_a \\ 
-2. \ B \rightarrow A : {\{ N_a \}}_{{k_B}^{-1}}
+2. \ B \rightarrow A : {\{ N_a \}}_{{k_b}^{-1}}
 $$
 I due protocolli sono equivalenti perché entrambi garantiscono autenticazione con freshness.
 
 Un estensione del protocollo può essere:
 $$
-1. A \rightarrow B: \{ N_a\}_{k_B} \\
+1. A \rightarrow B: \{ N_a\}_{k_b} \\
 2. B \rightarrow B: N_a \\
 3. B \rightarrow A: \{ N_b\}_{k_a} \\
 4. A \rightarrow B: N_b \\
@@ -38,7 +38,7 @@ B \rightarrow A: \{ N_a, N_b \}_{k_a}
 $$
 Otteniamo quindi:
 $$
-1. \ A \rightarrow B: \{ N_a\}_{k_B} \\
+1. \ A \rightarrow B: \{ N_a\}_{k_b} \\
 2. \ B \rightarrow A: \{ N_a, N_b \}_{k_a} \\
 3. \ A \rightarrow B: N_b
 $$
@@ -46,7 +46,7 @@ C'è il problema di capire inizialmente per $B$ chi sia il mittente al primo mes
 
 Una soluzione equipollente può essere esplicitare il nome del mittente allo step **1**.
 $$
-1. A \rightarrow B: \{ A, N_a\}_{k_B} \\
+1. A \rightarrow B: \{ A, N_a\}_{k_b} \\
 2. B \rightarrow A: \{ N_a, N_b \}_{k_a} \\
 3. A \rightarrow B: N_b \\
 $$
@@ -57,7 +57,7 @@ Non è una buona scelta utilizzare la nonce $N_b$ come chiave di sessione perch�
 
 Un ulteriore step per garantire la sicurezza della nonce $N_b$ in modo da utilizzarla come chiave di sessione può essere cifrarla.
 $$
-1. A \rightarrow B: \{ A, N_a\}_{k_B} \\
+1. A \rightarrow B: \{ A, N_a\}_{k_b} \\
 2. B \rightarrow A: \{ N_a, N_b \}_{k_a} \\
 3. A \rightarrow B: \{ N_b \}_{k_b}\\
 $$
@@ -80,9 +80,9 @@ Supponiamo di avere tre agenti, $A, B, C$, dove $C$ è l'utente malevolo.
 $A$ inizia comunicando con l'utente malevolo $C$.
 $$
 1. \ A \rightarrow C: \{ A, N_a\}_{k_c} \\
-2. \ C \rightarrow B: \{ A, N_a \}_{k_b} \\
-3. \ B \rightarrow C: \{ N_a, N_b \}_{k_a} \\
-4. \ C \rightarrow A: \{ N_a, N_b \}_{k_a}
+1'. \ C \rightarrow B: \{ A, N_a \}_{k_b} \\
+2'. \ B \rightarrow C: \{ N_a, N_b \}_{k_a} \\
+2. \ C \rightarrow A: \{ N_a, N_b \}_{k_a}
 $$
 In questo scenario, $A$ che voglia parlare con $C$ in realtà si ritrova a parlare indirettamente con $B$, mentre $C$ funge da ponte, inoltrando i messaggi di $A$ a $B$ e reinoltrando la risposta di $B$ ad $A$ (la nonce creata da $B$, il messaggio cifrato con la chiave di $B$).
 
@@ -90,12 +90,21 @@ La ricezione del messaggio al passaggio 3 però agli occhi di $A$ non mostra alc
 
 Effettuati i 4 punti di autenticazione, $A$ estrae la nonce / chiave di sessione e comunica con $C$.
 $$
-5. \ A \rightarrow C:  \{ N_b \}_{k_c} \\
-6. \ C \rightarrow B: \{ N_a \}_{k_b}
+3. \ A \rightarrow C:  \{ N_b \}_{k_c} \\
+3'. \ C \rightarrow B: \{ N_a \}_{k_b}
 $$
 $B$ crede quindi che il suo interlocutore sia $A$. Ritiene di aver autenticato $A$ ma il suo interlocutore è $C$. Questo è un man-in-the-middle al protocollo di Needham-Schroeder.
 L'apprendimento della nonce $N_b$ permette all'attaccante di sovvertire la proprietà l'autenticazione, rendendo il protocollo insicuro.
 
+Ricapitolando quindi:
+$$
+1. \ A \rightarrow C: \{ A, N_a\}_{k_c} \\
+1'. \ C \rightarrow B: \{ A, N_a \}_{k_b} \\\\
+2'. \ B \rightarrow C: \{ N_a, N_b \}_{k_a} \\
+2. \ C \rightarrow A: \{ N_a, N_b \}_{k_a} \\\\
+3. \ A \rightarrow C:  \{ N_b \}_{k_c} \\
+3'. \ C \rightarrow B: \{ N_a \}_{k_b}
+$$
 Needham-Schroeder sostennero che l'attacco di Lowe non fosse tale, dicendo che **il protocollo non era pensato per il modello di attaccante che Lowe aveva introdotto**. C'è da dire che l'attacco ha comunque valenza.
 
 ### Protocollo Needham-Schroeder nel modello General Attacker
