@@ -91,7 +91,7 @@ La ricezione del messaggio al passaggio 3 però agli occhi di $A$ non mostra alc
 Effettuati i 4 punti di autenticazione, $A$ estrae la nonce / chiave di sessione e comunica con $C$.
 $$
 3. \ A \rightarrow C:  \{ N_b \}_{k_c} \\
-3'. \ C \rightarrow B: \{ N_a \}_{k_b}
+3'. \ C \rightarrow B: \{ N_b \}_{k_b}
 $$
 $B$ crede quindi che il suo interlocutore sia $A$. Ritiene di aver autenticato $A$ ma il suo interlocutore è $C$. Questo è un man-in-the-middle al protocollo di Needham-Schroeder.
 L'apprendimento della nonce $N_b$ permette all'attaccante di sovvertire la proprietà l'autenticazione, rendendo il protocollo insicuro.
@@ -103,7 +103,7 @@ $$
 2'. \ B \rightarrow C: \{ N_a, N_b \}_{k_a} \\
 2. \ C \rightarrow A: \{ N_a, N_b \}_{k_a} \\\\
 3. \ A \rightarrow C:  \{ N_b \}_{k_c} \\
-3'. \ C \rightarrow B: \{ N_a \}_{k_b}
+3'. \ C \rightarrow B: \{ N_b \}_{k_b}
 $$
 Needham-Schroeder sostennero che l'attacco di Lowe non fosse tale, dicendo che **il protocollo non era pensato per il modello di attaccante che Lowe aveva introdotto**. C'è da dire che l'attacco ha comunque valenza.
 

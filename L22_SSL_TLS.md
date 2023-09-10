@@ -268,6 +268,16 @@ Le fasi 2 e 3 del protocollo sono computazionalmente onerose.
 
 Per il **ripristino della sessione** il materiale crittografico viene rinfrescato per mezzo di master secret e nuove nonce.
 
+Lo **stato di una connessione** si compone invece di:
+
+- Server e client random
+- Server MAC write secret
+- Client MAC write secret
+- Server write key (chiave simmetrica usata dal server)
+- Client write key (chiave simmetrica usata dal client)
+- Initialization vectors (per indicare la codifica a blocchi)
+- Sequence numbers
+
 # TLS
 
 La prima versione di TLS risale al 1999, con l'RFC 2246.

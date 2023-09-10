@@ -6,7 +6,7 @@ Segretezza del messaggio $m$ per $A$ e $B$, due modi per ottenerla:
 
 - **Crittografia simmetrica**
 
-  - **Prerequistito**: chiave $k_{ab}$ sia condivisa tra $A$ e $B$ **soli**, cioè:
+  - **Prerequisito**: chiave $k_{ab}$ sia condivisa tra $A$ e $B$ **soli**, cioè:
     $$
     A \rightarrow B : m_{k_{ab}}
     $$
@@ -15,7 +15,7 @@ Segretezza del messaggio $m$ per $A$ e $B$, due modi per ottenerla:
 
   - **Prerequisito 1**: $B$ abbia una chiave privata valida (sicura, non scaduta)
 
-  - **Prerequisitio 2**: $A$ possa verificare che $k_b$ è di $B$ ( ovvero $A$ **conosce il proprietario della chiave pubblica**, ha un associazione valida tra il messaggio e la chiave pubblica di $B$, e non ipoteticamente di un terzo agente $C$ )
+  - **Prerequisito 2**: $A$ possa verificare che $k_b$ è di $B$ ( ovvero $A$ **conosce il proprietario della chiave pubblica**, ha un associazione valida tra il messaggio e la chiave pubblica di $B$, e non ipoteticamente di un terzo agente $C$ )
     $$
     A \rightarrow B : m_{k_b}
     $$
