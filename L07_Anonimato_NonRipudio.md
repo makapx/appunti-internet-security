@@ -48,9 +48,20 @@ L'autenticazione è necessaria per il non ripudio ma non è sufficiente. Qual'or
 
 Per ulteriori approfondimenti vedere le slide del prof. G.B.
 
-
-
 :pencil: **Domanda d'esame**: descrivere la relazione tra le proprietà su.
+**Esempio di risposta:** descrivere come riportato poco su, aggiungendo scritte le proprietà e le loro implicazioni logiche
+$$
+1. \ autenticazione \rightarrow \neg anonimato \\
+2. \ anonimato \rightarrow \neg autenticazione \\
+3. \ non\ ripudio \rightarrow autenticazione \\
+4. \ anonimato \rightarrow \neg non \ ripudio (2, contra(3))\\
+5. \ non \ ripudio \rightarrow \neg anonimato \ (3,1)
+$$
+Ovviamente **è falsa l'implicazione**:
+$$
+autenticazione \rightarrow non \ ripudio
+$$
+È importante ricordare che queste relazioni valgono se si parla di garantire le proprietà contemporaneamente (nello stesso istante temporale), sono però ottenibili entrambe tramite enforcing temporaneo, ovvero se volute ed applicate in momenti differenti, come si vedrà per il protocollo WATA.
 
 ------
 
