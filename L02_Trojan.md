@@ -1,17 +1,17 @@
 # Trojan horse e privilege escalation
 
-Il **trojan horse** è uno dei tanti esempi di codice malevolo, ci sono poi ad esempio **logic bomb** e le **backdoor**, ed ancora altri esempi ancora di malware.
+Il **trojan horse** è uno dei tanti esempi di codice malevolo, ci sono poi ad esempio  le**logic bomb** e le **backdoor**, ed ancora altri esempi ancora di malware.
 
-Premesse per la comprensione:
+## Premesse per la comprensione
+
 Ogni file UNIX ha un proprietario ed un gruppo (vedi ACL: access control list).
 Normalmente un programma riceve i permessi dell'utente che lo lancia (`whoami`). Il programma `passwd` ad esempio appartiene all'utente `root`. Affinché l'utente possa cambiare la propria password il bit **SUID** (Set owner User ID up on execution) viene impostato ed **il programma viene lanciato con i permessi dell'owner**.
 
 Pur trattandosi di modifiche ai permessi, un'operazione parecchio delicata, la questione non rappresenta un immediato campanello d'allarme in quanto `passwd` regolamenta il flusso delle operazioni che possono essere fatte sul file delle password, limitando l'operato dell'utente al semplice cambiare la propria password.
 
-Il bit **SUID** nasce quindi per motivi funzionali ed è importante dal punto di vista della sicurezza visto che **permette l'aumento di privilegi**.
-Un aumento non voluto dei privilegi porta all'attacco di **[privilege escalation](https://en.wikipedia.org/wiki/Privilege_escalation)**
+Il bit **SUID** nasce quindi per motivi funzionali ed è importante dal punto di vista della sicurezza visto che **permette l'aumento di privilegi**. Un aumento non voluto dei privilegi porta all'attacco di **[privilege escalation](https://en.wikipedia.org/wiki/Privilege_escalation)**
 
-Questo bit può essere utilizzato per costruire un trojan.
+Questo bit può essere sfruttato per costruire un trojan.
 
 ## Analisi di un trojan
 
@@ -35,16 +35,16 @@ I possibili scenari sono:
 
 Il modo in cui le varie routine danno i permessi è un punto critico per le policy.
 
-Ad oggi `cp` **da alla copia i permessi della cartella di destinazione**, motivo per cui il trojan sopra riportato non è più utilizzabile.
+**Ad oggi** `cp` **da alla copia i permessi della cartella di destinazione**, motivo per cui il trojan sopra riportato non è più utilizzabile.
 
 La vulnerabilità che permette questo attacco di privilege escalation è la **[CVE-2015-1328](https://ubuntu.com/security/CVE-2015-1328)**.
-È possibile riprodurre l'attacco su qualunque sistema operativo che presenti il modulo del filesystem alla versione riportata, come ad esempio Ubuntu 14.04.
+È possibile riprodurre l'attacco su qualunque sistema operativo che presenti il modulo del filesystem alla versione riportata, come ad esempio Ubuntu 14.04 (senza gli ultimi aggiornamenti legati al supporto esteso)
 
-Le prime due linee dello script vanno sotto il nome di **"carico" (payload)** e costituiscono il punto saliente dell'attacco. L'intrusione effettiva si avrà poi quando l'attaccante, dopo aver fatto eseguire lo script alla vittima ignara, si ritroverà nella directory /tmp (condivisa tra i vari utenti del sistema) un eseguibile di shell **con privilegi della vittima**.
+Le prime due linee dello script vanno sotto il nome di **"carico" (payload)** e costituiscono il punto saliente dell'attacco. L'intrusione effettiva si avrà poi quando l'attaccante, dopo aver fatto eseguire lo script alla vittima ignara, si ritroverà nella directory `/tmp` (condivisa tra i vari utenti del sistema) un eseguibile di shell **con privilegi della vittima**.
 
 Quando l'attaccante richiama la shell copiata se l'attacco è andato a buon fine come output del comando `whoami` si ha il nome della vittima, altrimenti verrà visualizzato il proprio nome utente.
 
-**Nota bene**: questo attacco non consente in automatico di avere privilegi di amministratore ma fornisce gli stessi privilegi della vittima, dando quindi all'attaccante:
+**Nota bene**: questo attacco non consente in automatico di avere privilegi di amministratore ma **fornisce gli stessi privilegi della vittima**, dando quindi all'attaccante:
 
 - la capacità di leggere e scrivere nello spazio della vittima
 - la capacità di eseguire altri programmi (a meno di controlli e limitazioni di più altro livello forniti dal programma stesso) con i privilegi della vittima

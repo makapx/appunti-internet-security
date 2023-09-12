@@ -33,8 +33,6 @@ Non dobbiamo illuderci che una sola misura di sicurezza sia abbastanza per mette
 
 Come già visto, affidarsi ai tools, anche se ideati per fini di protezione e supporto, è un atto di fede e spesso non ci si domanda come questi funzionino internamente, rendendo le loro vulnerabilità invisibili.
 
-
-
 I browser si sono evoluti per proteggere le password e l'utilizzo stesso del browser per evitare che venga raggirato per accedervi. Ovviamente non è uno standard e i browser si sono adattati con tempi diversi.
 
 I browser rappresenta un buon esempio di come, per via dell'usabilità, spesso si viene a configurare una vulnerabilità: non effettuo l'autenticazione sui vari siti di volta in volta perché il browser immette le mie credenziali. Discorso analogo con la carta di credito che sotto un tot di spesa non richiede l'autenticazione.
@@ -65,10 +63,10 @@ graph
 attacchi[Attacchi] -->attacchi_criminali(Attacchi criminali)
 attacchi --> attacchi_sistemi_legali(Attacchi basati su sistemi legali)
 attacchi --> violazioni_privatezza(Violazioni della privatezza)
-attacchi --> ermeticita_bance(Ermeticità delle banche)
+
 attacchi_sistemi_legali(Attacchi basati su sistemi legali) --> ermeticita_bance(Ermeticità delle banche)
 attacchi_sistemi_legali(Attacchi basati su sistemi legali) --> esperto(Parere dell'esperto in tribunale)
-ermeticita_bance(Ermeticità delle banche) --> attacchi_pubblicitari(Attacchi a scopo pubblicitario)
+attacchi --> attacchi_pubblicitari(Attacchi a scopo pubblicitario)
 attacchi_pubblicitari(Attacchi a scopo pubblicitario) --> dos(Negazione del servizio - DOS )
 
 attacchi_criminali(Attacchi criminali) --> frodi(Frodi)

@@ -42,7 +42,7 @@ Per un esempio di risposta leggere: [Il risk-based thinking nella ISO 9001:2015]
 
 ------
 
-## Misure di mitigazione, limiti degli strumenti e minacce: overview
+# Misure di mitigazione, limiti degli strumenti e minacce: overview
 
 **Reference**: slide del prof G.B., sezione limiti della crittografia e limiti dell'uso della password.
 

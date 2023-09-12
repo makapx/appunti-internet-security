@@ -93,7 +93,7 @@ Il gioco della sicurezza è un continuo loop tra attacco e difesa. Questo è coe
 - **Red team:** chi esegue l'attacco
 - **Blue team**: chi si difende
 
-# Porte di sistema
+## Porte di sistema
 
  :notebook_with_decorative_cover: **Definizione**: **port, an addressable network location implemented inside of the operating system.** 
 Una locazione di rete indirizzabile, esponibile.
