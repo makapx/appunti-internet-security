@@ -1,9 +1,8 @@
 # Appunti di Internet Security 2023 - DMI UniCT
 
-Appunti in markdown delle lezioni di Internet Security. DMI UniCT 2O23.
+Appunti in markdown delle lezioni di Internet Security. DMI UniCT 2023.
 
-
-Table of content
+## Table of content
 
 1. [Introduzione](./L01_Introduzione.md)
 2. [Trojan e priviledge escalation](./L02_Trojan.md)
@@ -27,6 +26,12 @@ Table of content
 20. [IDS e Malware](./L20_IDS_Malware.md)
 21. [Virus, antivirus, firewall](./L21_Virus_Firewall.md)
 22. [SSL e TLS](./L22_SSL_TLS.md)
+
+## Extra
+
+Al path `anki` è possibile trovare una file `.apkg` contenente un centinaio di domande tipo d'esame. Il deck può essere importato su [Anki](https://apps.ankiweb.net/), programma per lo studio di flash card, e impostato secondo le proprie preferenze per uno studio ottimale. Le domande presenti sono state estratte da questi appunti.
+
+Anki è disponibile per Windows, MacOS, distro Linux Debian-based e mobile. Inoltre è disponibile tramite [AUR](https://wiki.archlinux.org/title/anki) per distro Arch-based. Il pacchetto non compilato potrebbe presentare alcuni problemi a causa di conflitti o repository inaccessibili di RUST, in quel caso è consigliabile installare la versione `anki-bin`.
 
 ## Note per l'utilizzo
 
